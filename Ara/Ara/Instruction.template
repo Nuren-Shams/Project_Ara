@@ -1,0 +1,3 @@
+﻿RType Mnemonic RegisterName RegisterName RegisterName FuncCode
+IType Mnemonic RegisterName ImmediateValue
+JType Mnemonic ImmediateValue

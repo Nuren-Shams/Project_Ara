@@ -49,6 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FunctionCode.map" />
+    <None Include="Instruction.template" />
+    <None Include="Instruction.type" />
+    <None Include="OperationCode.map" />
+    <None Include="RegisterFile.map" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
