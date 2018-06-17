@@ -31,7 +31,9 @@ namespace Ara {
                 InstructionTemplate[Iterator] = new string[BulkData[Iterator].Split(' ').Length];
                 for(int SubIterator=0; SubIterator<InstructionTemplate[Iterator].Length; SubIterator++) {
                     InstructionTemplate[Iterator][SubIterator] = (string)BulkData[Iterator].Split(' ').GetValue(SubIterator);
+                    //System.Console.Write(InstructionTemplate[Iterator][SubIterator] + " ");
                 }
+                //System.Console.WriteLine();
             }
 
             return true;
@@ -48,18 +50,13 @@ namespace Ara {
                 return false;
             }
 
-            int MaxElementCount = System.Int32.MinValue;
-            for(int Iterator=0; Iterator<BulkData.Length; Iterator++) {
-                if (BulkData[Iterator].Split(' ').Length>MaxElementCount) { MaxElementCount = BulkData[Iterator].Split(' ').Length; }
-            }
-
-            InstructionType = new string[BulkData.Length, MaxElementCount];
+            InstructionType = new string[BulkData.Length, BulkData[0].Split(' ').Length];
             for(int RowIterator=0; RowIterator<BulkData.Length; RowIterator++) {
-                for(int ColumnIterator=0; ColumnIterator<MaxElementCount; ColumnIterator++) {
-                    try {
-                        InstructionType[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
-                    } catch(System.IndexOutOfRangeException) { InstructionType[RowIterator, ColumnIterator] = ""; }
+                for(int ColumnIterator=0; ColumnIterator<(InstructionType.Length/BulkData.Length); ColumnIterator++) {
+                    InstructionType[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
+                    //System.Console.Write(InstructionType[RowIterator, ColumnIterator] + " ");
                 }
+                //System.Console.WriteLine();
             }
 
             return true;
@@ -76,18 +73,13 @@ namespace Ara {
                 return false;
             }
 
-            int MaxElementCount = System.Int32.MinValue;
-            for(int Iterator=0; Iterator<BulkData.Length; Iterator++) {
-                if (BulkData[Iterator].Split(' ').Length>MaxElementCount) { MaxElementCount = BulkData[Iterator].Split(' ').Length; }
-            }
-
-            OCMap = new string[BulkData.Length, MaxElementCount];
+            OCMap = new string[BulkData.Length, BulkData[0].Split(' ').Length];
             for(int RowIterator=0; RowIterator<BulkData.Length; RowIterator++) {
-                for(int ColumnIterator=0; ColumnIterator<MaxElementCount; ColumnIterator++) {
-                    try {
-                        OCMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
-                    } catch(System.IndexOutOfRangeException) { OCMap[RowIterator, ColumnIterator] = ""; }
+                for(int ColumnIterator=0; ColumnIterator<(OCMap.Length/BulkData.Length); ColumnIterator++) {
+                    OCMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
+                    //System.Console.Write(OCMap[RowIterator, ColumnIterator] + " ");
                 }
+                //System.Console.WriteLine();
             }
 
             return true;
@@ -104,18 +96,13 @@ namespace Ara {
                 return false;
             }
 
-            int MaxElementCount = System.Int32.MinValue;
-            for(int Iterator=0; Iterator<BulkData.Length; Iterator++) {
-                if (BulkData[Iterator].Split(' ').Length>MaxElementCount) { MaxElementCount = BulkData[Iterator].Split(' ').Length; }
-            }
-
-            FCMap = new string[BulkData.Length, MaxElementCount];
+            FCMap = new string[BulkData.Length, BulkData[0].Split(' ').Length];
             for(int RowIterator=0; RowIterator<BulkData.Length; RowIterator++) {
-                for(int ColumnIterator=0; ColumnIterator<MaxElementCount; ColumnIterator++) {
-                    try {
-                        FCMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
-                    } catch(System.IndexOutOfRangeException) { FCMap[RowIterator, ColumnIterator] = ""; }
+                for(int ColumnIterator=0; ColumnIterator<(FCMap.Length/BulkData.Length); ColumnIterator++) {
+                    FCMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
+                    //System.Console.Write(FCMap[RowIterator, ColumnIterator] + " ");
                 }
+                //System.Console.WriteLine();
             }
 
             return true;
@@ -132,18 +119,13 @@ namespace Ara {
                 return false;
             }
 
-            int MaxElementCount = System.Int32.MinValue;
-            for(int Iterator=0; Iterator<BulkData.Length; Iterator++) {
-                if (BulkData[Iterator].Split(' ').Length>MaxElementCount) { MaxElementCount = BulkData[Iterator].Split(' ').Length; }
-            }
-
-            RFMap = new string[BulkData.Length, MaxElementCount];
-            for(int RowIterator=0; RowIterator<BulkData.Length; RowIterator++) {
-                for(int ColumnIterator=0; ColumnIterator<MaxElementCount; ColumnIterator++) {
-                    try {
-                        RFMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
-                    } catch(System.IndexOutOfRangeException) { RFMap[RowIterator, ColumnIterator] = ""; }
+            RFMap = new string[BulkData.Length, BulkData[0].Split(' ').Length];
+            for (int RowIterator = 0; RowIterator < BulkData.Length; RowIterator++) {
+                for (int ColumnIterator = 0; ColumnIterator < (RFMap.Length / BulkData.Length); ColumnIterator++) {
+                    RFMap[RowIterator, ColumnIterator] = (string)BulkData[RowIterator].Split(' ').GetValue(ColumnIterator);
+                    //System.Console.Write(RFMap[RowIterator, ColumnIterator] + " ");
                 }
+                //System.Console.WriteLine();
             }
 
             return true;
