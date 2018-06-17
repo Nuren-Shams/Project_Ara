@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ara {
     public static class Source {
@@ -12,7 +8,7 @@ namespace Ara {
             Console.WriteLine();
             //Code start
 
-
+            Assembler.Assemble();
 
             //Code end
             Console.Write("\nPress any key to exit. . . ");
